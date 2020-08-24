@@ -4,13 +4,18 @@
 
 ### 1.1 Tổng quan SVM
 
-#### 1.1.1 SVM là gì ?
+#### 1.1.1 Bài toán phân chia 2 classes
 
-#### 1.1.2 Bài toán phân chia 2 classes
+#### 1.1.2 Mặt phân chia tốt nhất là mặt có margin lớn nhất
 
-#### 1.1.3 Mặt phân chia tốt nhất là mặt có margin lớn nhất
+#### 1.1.3 SVM là gì ?
+
+SVM là một model học có giám sát dùng cho bài toán classification hoặc regression. Cụ thể hơn SVM đi tìm mặt phân cách sao cho margin tìm được là lớn nhất.
 
 #### 1.1.4 Bài toán tối ưu cho SVM
+
+Mục tiêu là tìm ra `w` với margin lớn
+
 
 #### 1.1.5 Lời giải 
 
