@@ -6,7 +6,7 @@
 
 SVM là một model học có giám sát dùng cho bài toán classification hoặc regression. Linear SVM đi tìm siêu phẳng phân cách giữa 2 classes, hoặc tìm nhiều siêu phẳng phân cách giữa nhiều classes sao cho khoảng cách từ siêu phẳng đến điểm nearest training-data là lớn nhất.
 
-![](images/svm-def.png)
+<img src="images/svm-def.png" alt="svm" width="300"/>
 
 Khoảng cách từ siêu phẳng đến nearest training-data được gọi là margin của siêu phẳng. Ở hình trên H2 tuy phân chia được 2 classes nhưng có margin nhỏ, được cho là không phân loại tốt bằng H1 với margin lớn nhất.
 
