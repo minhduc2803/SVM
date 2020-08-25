@@ -1,22 +1,31 @@
+# NHẬP MÔN HỌC MÁY
+
+### Báo cáo đồ án cuối kỳ
+
 # Support vector machine
+
+| Nhóm 41 | MSSV |
+|---------|------|
+| Nguyễn Minh Đức | 1712358 |
+| Đặng Thành Duy | 1712379 |
+
+
 
 ## 1. Tìm hiểu về lý thuyết mô hình SVM (support vector machine)
 
 ### 1.1 Linear SVM
 
-SVM là một model học có giám sát dùng cho bài toán classification hoặc regression. Linear SVM đi tìm siêu phẳng phân cách giữa 2 classes, hoặc tìm nhiều siêu phẳng phân cách giữa nhiều classes sao cho khoảng cách từ siêu phẳng đến điểm nearest training-data là lớn nhất.
+SVM là một model học có giám sát dùng cho bài toán classification hoặc regression. Linear SVM đi tìm một siêu phẳng phân cách giữa 2 classes, hoặc tìm nhiều siêu phẳng phân cách giữa nhiều classes sao cho khoảng cách từ siêu phẳng đến điểm nearest training-data là lớn nhất.
 
 <img src="images/svm-def.png" alt="svm" width="300"/>
 
 Khoảng cách từ siêu phẳng đến nearest training-data được gọi là margin của siêu phẳng. Ở hình trên H2 tuy phân chia được 2 classes nhưng có margin nhỏ, được cho là không phân loại tốt bằng H1 với margin lớn nhất.
 
-
-
 #### 1.1.4 Bài toán tối ưu cho Linear SVM
 
 Cho một training dataset khả tách tuyến tính gồm n điểm đầu vào:
 
-$(x_1,y_1), (x_2,y_2),...,(x_i,y_i)$
+$$(x_1,y_1), (x_2,y_2),...,(x_i,y_i)$$
 
 Với vector $x_i \in R^d$ có $y_i$ là label tương ứng.
 
@@ -34,17 +43,49 @@ Các data $x$  nằm trên siêu phẳng có giá trị 0.
 
 Theo đó ta có thể scale $w$ và $b$ cho một hệ số bất kỳ mà vẫn không làm thay đổi kết quả phân loại. SVM normalize $w$ và $b$ sao cho điểm gần siêu phẳng nhất ($x_n$) thỏa
 
-$|w^T*x_n+b|=1$
+$$|w^T*x_n+b|=1$$
 
 Mục tiêu của SVM là xác định siêu phẳng có khoảng cách từ $x_n$ tới siêu phẳng là lớn nhất.
 
 Lấy một vector $x$ bất kỳ trong siêu phẳng, khi đó khoảng cách từ $x_n$ tới siêu phẳng (margin) được xác định bằng cách tính độ dài của hình chiếu hiệu vector $x_n-x$ lên vector pháp tuyến đơn vị.
 
-Một vector pháp tuyến đơn vị có thể được xác định qua $w$  
-$\hat{w} = {w}/{||w||}$
+Một vector pháp tuyến đơn vị có thể được xác định qua $w$ 
 
-$=> distance = |\hat{w}*(x_n-x)|$
-#### 1.1.5 Lời giải 
+$$\hat{w} = \frac{w}{||w||}$$
+
+Khoảng cách từ $x_n$ tới siêu phẳng bằng
+
+$$=> distance = |\hat{w}*(x_n-x)|$$
+
+Biến đổi một chút
+
+$$ distance = \frac{1}{||\hat{w}||}|w^Tx_n-w^Tx| = \frac{1}{||\hat{w}||}|w^Tx_n+b-w^Tx-b| = \frac{1}{||\hat{w}||}$$
+
+Từ đó ta có bài toán maximize $distance: \frac{1}{||\hat{w}||}$ ở trên, với ràng buộc là điểm gần siêu phẳng nhất $x_n$ thỏa $|w^Tx_n+b|=1$
+
+Chú ý rằng: $|w^Tx_n+b| = y_n(w^Tx_n+b)$, bài toán ở trên trở thành bài toán:
+
+Minimize
+
+$$\frac{1}{2}w^Tw$$
+
+Với ràng buộc
+
+$$y_n(w^Tx_n+b) \geq 1, n = 1,2,...,N$$
+
+#### 1.1.5 Lời giải
+
+Bài toán tối ưu có ràng buộc, chúng ta sẽ nghĩ ngay đến phương pháp nhân tử Lagrange. Phần minimize là một hàm bậc 2 và các ràng buộc là tuyến tính, chứng tỏ bài toán có nghiệm tối ưu $\implies$, tồn tài một siêu phẳng phân cách có margin lớn nhất.
+
+Minimize
+
+$$\mathcal{L}(w,b,\alpha) = \frac{1}{2}w^Tw-\sum_{n=1}^{N}\alpha_n(y_n(w^Tx_n+b)-1)$$
+
+with respect to $w$ và $b$, đồng thời maximize with respect to mỗi $\alpha_n \geq 0$
+
+Cho các đạo hàm bậc nhất bằng 0, ta có:
+
+$$\frac{\partial {\mathcal{L}}}{\partial b} = - \sum_{n=1}^$$
 
 #### 1.1.6 Support vector
 
