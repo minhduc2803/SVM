@@ -49,7 +49,8 @@ Với vector $x_i \in R^d$ có $y_i$ là label tương ứng.
 
 Label của dữ liệu được xác định bởi $y_i = 1$ (class 1) hoặc $y_i = -1$ (class -1)
 
-Theo PLA ta có thể tìm được một ma trận trọng số $w$ và một vector bias $b$ sao cho $sign ( w^T*x_i + b ) = y_i$ với mọi $x_i$ thuộc training dataset.
+Theo PLA ta có thể tìm được một ma trận trọng số $w$ và một vector bias $b$ sao cho 
+$sign ( w^T*x_i + b ) = y_i$ với mọi $x_i$ thuộc training dataset.
 
 Khi đó $w^T*x + b = 0$ là một siêu phẳng phân chia 2 classes. $w^T$ đóng vai trò là vector pháp tuyến của siêu phẳng. 
 
